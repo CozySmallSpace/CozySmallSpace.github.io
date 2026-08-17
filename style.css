@@ -188,6 +188,56 @@ nav.main-nav a:hover{color:var(--accent);}
 }
 .hero .accent{color:var(--accent);}
 
+/* Homepage photo hero banner */
+.hero-banner{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  min-height:420px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  margin:26px 0 44px;
+  background-size:cover;
+  background-position:center;
+}
+.hero-banner::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(20,16,12,0.42) 0%, rgba(20,16,12,0.72) 100%);
+}
+.hero-banner-inner{
+  position:relative;
+  z-index:1;
+  padding:20px 24px;
+  max-width:640px;
+}
+.hero-banner h1{
+  font-size:36px;
+  line-height:1.25;
+  margin:0 0 14px;
+  color:#fff;
+  text-shadow:0 2px 10px rgba(0,0,0,0.3);
+}
+.hero-banner h1 .accent{color:#f4b184;}
+.hero-banner p{
+  color:rgba(255,255,255,0.94);
+  font-size:17px;
+  margin:0;
+  text-shadow:0 1px 6px rgba(0,0,0,0.3);
+}
+@media (max-width:640px){
+  .hero-banner{
+    min-height:300px;
+    border-radius:14px;
+    margin:16px 0 30px;
+  }
+  .hero-banner h1{font-size:26px;}
+  .hero-banner p{font-size:14.5px;}
+}
+
 /* Guides grid (every article gets its own card) */
 .guides-header{
   margin:22px 0 28px;
