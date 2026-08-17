@@ -206,7 +206,7 @@ nav.main-nav a:hover{color:var(--accent);}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg, rgba(20,16,12,0.42) 0%, rgba(20,16,12,0.72) 100%);
+  background:linear-gradient(180deg, rgba(20,16,12,0.16) 0%, rgba(20,16,12,0.22) 45%, rgba(20,16,12,0.4) 100%);
 }
 .hero-banner-inner{
   position:relative;
@@ -219,14 +219,14 @@ nav.main-nav a:hover{color:var(--accent);}
   line-height:1.25;
   margin:0 0 14px;
   color:#fff;
-  text-shadow:0 2px 10px rgba(0,0,0,0.3);
+  text-shadow:0 2px 6px rgba(0,0,0,0.55), 0 1px 22px rgba(0,0,0,0.45);
 }
-.hero-banner h1 .accent{color:#f4b184;}
+.hero-banner h1 .accent{color:#f8c299;}
 .hero-banner p{
-  color:rgba(255,255,255,0.94);
+  color:rgba(255,255,255,0.96);
   font-size:17px;
   margin:0;
-  text-shadow:0 1px 6px rgba(0,0,0,0.3);
+  text-shadow:0 1px 4px rgba(0,0,0,0.6), 0 1px 14px rgba(0,0,0,0.4);
 }
 @media (max-width:640px){
   .hero-banner{
