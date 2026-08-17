@@ -151,7 +151,9 @@ nav.main-nav a:hover{color:var(--accent);}
     position:relative;
   }
   nav.main-nav a{margin-left:0;font-size:13.5px;}
-  .nav-dropdown{margin-left:0;position:static;}
+  nav.main-nav > a{order:2;}
+  nav.main-nav > a:first-child{order:1;}
+  .nav-dropdown{margin-left:0;position:static;order:3;}
   .nav-dropdown-menu{
     left:0;
     right:0;
