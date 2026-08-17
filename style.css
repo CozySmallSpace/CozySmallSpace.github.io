@@ -146,14 +146,14 @@ nav.main-nav a:hover{color:var(--accent);}
   .logo{font-size:17px;}
   nav.main-nav{
     width:100%;
-    justify-content:flex-start;
+    justify-content:flex-end;
     flex-wrap:nowrap;
     position:relative;
     gap:14px;
   }
   nav.main-nav a{margin-left:0;font-size:13px;}
-  nav.main-nav > a{order:2;}
-  nav.main-nav > a:first-child{order:1;margin-right:auto;}
+  nav.main-nav > a{order:2;margin-right:0;}
+  nav.main-nav > a:first-child{order:1;margin-right:0;}
   .nav-dropdown{margin-left:0;position:static;order:3;}
   .nav-dropdown-btn{font-size:13px;}
   .nav-dropdown-menu{
