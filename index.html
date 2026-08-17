@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CozySmallSpace — Decor &amp; Organization Ideas for Small Spaces</title>
 <meta name="description" content="Practical decor, furniture, and organization picks for small apartments and tiny homes. No-drill solutions, space-saving furniture, and honest recommendations.">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -18,7 +18,16 @@
     <a href="index.html" class="logo">🏡 CozySmallSpace</a>
     <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="#guides">All Guides</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button">Categories &#9662;</button>
+        <div class="nav-dropdown-menu">
+          <a href="index.html?cat=storage#guides">Storage &amp; Organization</a>
+          <a href="index.html?cat=furniture#guides">Multi-functional Furniture</a>
+          <a href="index.html?cat=lighting#guides">Lighting</a>
+          <a href="index.html?cat=renter#guides">Renter-Friendly</a>
+          <a href="index.html#guides">All Guides</a>
+        </div>
+      </div>
       <a href="affiliate-disclosure.html">Disclosure</a>
     </nav>
   </div>
@@ -36,14 +45,6 @@
   <div class="guides-header">
     <h2 class="section-title">All guides</h2>
     <p class="guides-sub">New guides are added regularly — every pick here is compared using real Amazon ratings, review counts, and buyer feedback, not just how it looks in a photo.</p>
-  </div>
-
-  <div class="category-filters" id="categoryFilters">
-    <span class="filter-pill active" data-filter="all">All</span>
-    <span class="filter-pill" data-filter="storage">Storage &amp; Organization</span>
-    <span class="filter-pill" data-filter="furniture">Multi-functional Furniture</span>
-    <span class="filter-pill" data-filter="lighting">Lighting</span>
-    <span class="filter-pill" data-filter="renter">Renter-Friendly</span>
   </div>
 
   <div class="guide-grid" id="guideGrid">
@@ -176,24 +177,36 @@
 
 <script>
 (function(){
-  var pills = document.querySelectorAll('.filter-pill');
-  var cards = document.querySelectorAll('.guide-card');
-  pills.forEach(function(pill){
-    pill.addEventListener('click', function(){
-      pills.forEach(function(p){ p.classList.remove('active'); });
-      pill.classList.add('active');
-      var filter = pill.getAttribute('data-filter');
-      cards.forEach(function(card){
-        if(filter === 'all' || card.getAttribute('data-category') === filter){
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+  var params = new URLSearchParams(window.location.search);
+  var cat = params.get('cat');
+  if(cat){
+    var cards = document.querySelectorAll('.guide-card');
+    cards.forEach(function(card){
+      if(card.getAttribute('data-category') === cat){
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
     });
-  });
+  }
 })();
 </script>
 
+<script>
+(function(){
+  var btn = document.querySelector('.nav-dropdown-btn');
+  var menu = document.querySelector('.nav-dropdown-menu');
+  if(btn && menu){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+    menu.addEventListener('click', function(e){ e.stopPropagation(); });
+    document.addEventListener('click', function(){
+      menu.classList.remove('open');
+    });
+  }
+})();
+</script>
 </body>
 </html>
