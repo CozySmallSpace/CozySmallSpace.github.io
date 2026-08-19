@@ -145,4 +145,28 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://cozysmallspace.github.io/murphy-wall-beds-small-bedrooms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cozysmallspace.github.io/electric-fireplace-tv-stands.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cozysmallspace.github.io/compact-sectional-sofas-small-living-rooms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cozysmallspace.github.io/bedroom-furniture-sets-small-apartments.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
