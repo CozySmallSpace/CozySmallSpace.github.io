@@ -318,10 +318,10 @@ nav.main-nav a:hover{color:var(--accent);}
   border-radius:20px;
   margin-bottom:14px;
 }
-.tag-storage{background:#e8f0e8;color:#3d7a4d;}
+.tag-storage{background:#e8f0e8;color:#2f6039;}
 .tag-furniture{background:#eef4fb;color:#2f5f9e;}
-.tag-lighting{background:#fff6ea;color:#a5730f;}
-.tag-renter{background:#f7e9e3;color:var(--accent-dark);}
+.tag-lighting{background:#fff6ea;color:#8a5c0c;}
+.tag-renter{background:#f7e9e3;color:#8a4526;}
 .guide-link{
   margin-top:18px;
   font-size:13.5px;
@@ -381,9 +381,9 @@ h2.prod-title:first-of-type{border-top:none;padding-top:0;}
   display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;
   letter-spacing:0.4px;padding:3px 10px;border-radius:20px;margin-bottom:10px;
 }
-.budget-tag.low{background:#e8f0e8;color:#3d7a4d;}
+.budget-tag.low{background:#e8f0e8;color:#2f6039;}
 .budget-tag.mid{background:#eef4fb;color:#2f5f9e;}
-.budget-tag.high{background:#fff6ea;color:#a5730f;}
+.budget-tag.high{background:#fff6ea;color:#8a5c0c;}
 .prod-facts{font-size:14.5px;margin:0 0 12px;}
 .prod-facts li{margin-bottom:4px;}
 .research-note{
@@ -461,9 +461,9 @@ table.compare-table{
   display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;
   letter-spacing:0.3px;padding:2px 8px;border-radius:20px;
 }
-.compare-table .mini-tag.low{background:#e8f0e8;color:#3d7a4d;}
+.compare-table .mini-tag.low{background:#e8f0e8;color:#2f6039;}
 .compare-table .mini-tag.mid{background:#eef4fb;color:#2f5f9e;}
-.compare-table .mini-tag.high{background:#fff6ea;color:#a5730f;}
+.compare-table .mini-tag.high{background:#fff6ea;color:#8a5c0c;}
 
 /* You might also like */
 .related-section{margin:48px 0 8px;}
