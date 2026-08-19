@@ -24,7 +24,7 @@ body{
 a{color:inherit;}
 
 .container{
-  max-width:1440px;
+  max-width:1680px;
   margin:0 auto;
   padding:0 32px;
 }
@@ -263,20 +263,20 @@ nav.main-nav a:hover{color:var(--accent);}
 @media (min-width:1300px){
   .guide-grid{
     grid-template-columns:repeat(6, 1fr);
-    gap:20px;
+    gap:22px;
   }
   .guide-card{
-    padding:22px 18px;
+    padding:24px 20px;
   }
   .guide-card h3{
-    font-size:15.5px;
+    font-size:16px;
   }
   .guide-card p{
-    font-size:13.5px;
+    font-size:14px;
   }
   .guide-tag{
-    font-size:10px;
-    padding:4px 9px;
+    font-size:10.5px;
+    padding:4px 10px;
   }
 }
 .guide-card{
