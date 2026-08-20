@@ -395,6 +395,12 @@ h2.prod-title:first-of-type{border-top:none;padding-top:0;}
   background:#fdecea;border:1.5px solid #d98d85;border-radius:10px;
   padding:12px 16px;margin:10px 0;font-size:13.5px;color:#8a3f38;
 }
+.tip-note{
+  background:#f7e9e3;border:1.5px solid #dba488;border-radius:10px;
+  padding:12px 16px;margin:10px 0 18px;font-size:13.5px;
+}
+.tip-note .label{font-weight:700;color:#8a4526;font-size:11px;text-transform:uppercase;display:block;margin-bottom:5px;}
+.tip-note a{color:#8a4526;font-weight:700;text-decoration:underline;}
 
 /* Buy button */
 .buy-row{margin:16px 0 8px;}
