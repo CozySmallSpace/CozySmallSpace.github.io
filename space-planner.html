@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3JDT662GT5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-3JDT662GT5");
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Space Planner — Get a Personalized Small-Space Plan — CozySmallSpace</title>
+<meta name="description" content="Answer 4 quick questions about your room, your budget and whether you can drill — get a personalized small-space plan with the exact products to buy, in what order.">
+<link rel="stylesheet" href="style.css?v=19">
+</head>
+<body>
+
+<div class="disclosure-banner">
+  Contains affiliate links — we may earn a commission at no cost to you. <a href="affiliate-disclosure.html" aria-label="Learn more about our affiliate disclosure">Learn more</a>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">🏡 CozySmallSpace</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button">Categories &#9662;</button>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-col">
+            <span class="nav-dropdown-heading">Storage &amp; Organization</span>
+            <a href="mirrors-for-small-rooms.html">Best Mirrors for Small Rooms</a>
+            <a href="compact-wardrobes-closet-systems.html">Compact Wardrobes &amp; Closet Systems</a>
+            <a href="small-bedroom-storage-ideas.html">Small Bedroom Storage Ideas</a>
+            <a href="dorm-room-storage-organization-ideas.html">Dorm Room Storage Ideas</a>
+            <a href="kitchen-storage-small-apartments.html">Space-Saving Kitchen Storage</a>
+            <a href="under-sink-storage-organizers.html">Under-Sink Storage &amp; Organizers</a>
+            <a href="entryway-storage-benches.html">Entryway Storage Benches</a>
+            <a href="small-bathroom-storage-ideas.html">Small Bathroom Storage Ideas</a>
+            <a href="tv-stands-media-consoles.html">TV Stands &amp; Media Consoles</a>
+            <a href="electric-fireplace-tv-stands.html">Electric Fireplace TV Stands</a>
+            <span class="nav-dropdown-heading">Lighting</span>
+            <a href="no-wiring-lighting-ideas.html">No-Wiring Lighting Ideas</a>
+            <span class="nav-dropdown-heading">Renter-Friendly</span>
+            <a href="no-drill-wall-shelves.html">No-Drill Wall Shelves</a>
+            <a href="command-hooks-adhesive-wall-organizers.html">Command Hooks &amp; Adhesive Organizers</a>
+            <a href="no-drill-curtain-rods-tension-rods.html">No-Drill Curtain &amp; Tension Rods</a>
+          </div>
+          <div class="nav-dropdown-col">
+            <span class="nav-dropdown-heading">Multi-functional Furniture</span>
+            <a href="space-saving-beds-with-storage.html">Space-Saving Beds with Storage</a>
+            <a href="murphy-wall-beds-small-bedrooms.html">Murphy Beds &amp; Wall Beds</a>
+            <a href="modular-convertible-sofas-small-living-rooms.html">Modular &amp; Convertible Sofas</a>
+            <a href="compact-sectional-sofas-small-living-rooms.html">Compact Sectional Sofas</a>
+            <a href="multifunctional-furniture-studio.html">Multi-Functional Furniture for Studios</a>
+            <a href="small-space-home-office-desks.html">Small-Space Home Office Desks</a>
+            <a href="balcony-small-patio-furniture.html">Balcony &amp; Small Patio Furniture</a>
+            <a href="space-saving-dining-sets.html">Space-Saving Dining Sets</a>
+            <a href="room-dividers-studio-apartments.html">Room Dividers for Studios</a>
+            <a href="bedroom-furniture-sets-small-apartments.html">Bedroom Furniture Sets</a>
+            <span class="nav-dropdown-heading">All 24 guides</span>
+            <a href="index.html#guides">See everything on the homepage →</a>
+          </div>
+        </div>
+      </div>
+      <a href="space-planner.html" style="color:var(--accent-dark);">Space Planner</a>
+      <a href="tips-and-guides.html">Tips &amp; Guides</a>
+      <a href="affiliate-disclosure.html">Disclosure</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="planner-wrap">
+
+  <div id="wizard-view">
+    <div class="planner-hero">
+      <span class="planner-badge">Free tool</span>
+      <h1>Smart Space Planner</h1>
+      <p>Answer 4 quick questions about your room, your budget and whether you can drill — get a personalized plan with the exact products to buy, in the right order, matched to your situation.</p>
+    </div>
+
+    <div class="planner-progress">
+      <div class="planner-progress-step" data-step="1"></div>
+      <div class="planner-progress-step" data-step="2"></div>
+      <div class="planner-progress-step" data-step="3"></div>
+      <div class="planner-progress-step" data-step="4"></div>
+    </div>
+
+    <div class="planner-card">
+
+      <div class="planner-step" data-step="1">
+        <h2>What are you setting up?</h2>
+        <p class="step-sub">Pick the space you're working with right now.</p>
+        <div class="option-grid" id="grid-room"></div>
+        <div class="planner-nav-row">
+          <span></span>
+          <button class="planner-btn primary" id="btn-next-1" disabled>Next →</button>
+        </div>
+      </div>
+
+      <div class="planner-step" data-step="2">
+        <h2>Are you renting or do you own?</h2>
+        <p class="step-sub">This changes what we recommend — renters get no-drill, deposit-safe picks only.</p>
+        <div class="option-grid" id="grid-renter">
+          <div class="option-card" data-value="1"><span class="opt-icon">🔑</span>I'm renting</div>
+          <div class="option-card" data-value="0"><span class="opt-icon">🏡</span>I own / can drill</div>
+        </div>
+        <div class="planner-nav-row">
+          <button class="planner-btn ghost" data-back="1">← Back</button>
+          <button class="planner-btn primary" id="btn-next-2" disabled>Next →</button>
+        </div>
+      </div>
+
+      <div class="planner-step" data-step="3">
+        <h2>What do you need most?</h2>
+        <p class="step-sub">Pick up to 2 priorities — we'll build your plan around these first.</p>
+        <div class="option-grid" id="grid-priority"></div>
+        <div class="planner-nav-row">
+          <button class="planner-btn ghost" data-back="2">← Back</button>
+          <button class="planner-btn primary" id="btn-next-3" disabled>Next →</button>
+        </div>
+      </div>
+
+      <div class="planner-step" data-step="4">
+        <h2>What's your budget?</h2>
+        <p class="step-sub">Drag to set your total budget — your plan updates instantly.</p>
+        <div class="budget-slider-wrap">
+          <div class="budget-value"><span id="budget-num">500</span><span> USD total</span></div>
+          <input type="range" class="planner-range" id="budget-slider" min="50" max="2000" step="25" value="500">
+          <p class="budget-hint">From a single quick fix ($50) to a full room refresh ($2000+).</p>
+        </div>
+        <div class="planner-nav-row">
+          <button class="planner-btn ghost" data-back="3">← Back</button>
+          <button class="planner-btn primary" id="btn-see-plan">See my plan →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="results-view" class="planner-results">
+    <div class="results-head">
+      <h1>Your personalized space plan</h1>
+      <p>Matched to your room, your budget, and whether you can drill.</p>
+    </div>
+    <div class="results-chips" id="results-chips"></div>
+
+    <div class="budget-dashboard">
+      <h3>Suggested budget split</h3>
+      <p class="bd-sub">A starting point — adjust as real prices vary by pick.</p>
+      <div id="budget-bars"></div>
+    </div>
+
+    <div class="plan-grid" id="plan-grid"></div>
+
+    <div class="planner-actions">
+      <button class="planner-btn secondary" id="btn-adjust">Adjust my answers</button>
+      <button class="planner-btn primary" id="btn-save">Save / share this plan</button>
+    </div>
+    <div class="save-confirm" id="save-confirm"></div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>&copy; 2026 CozySmallSpace</span>
+    <span class="footer-links">
+      <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </span>
+  </div>
+</footer>
+
+<script src="planner-data.js"></script>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-dropdown-btn');
+  var menu = document.querySelector('.nav-dropdown-menu');
+  if(btn && menu){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      menu.classList.toggle('open');
+    });
+    menu.addEventListener('click', function(e){ e.stopPropagation(); });
+    document.addEventListener('click', function(){
+      menu.classList.remove('open');
+    });
+  }
+})();
+
+(function(){
+  var state = { room:null, renter:null, priorities:[], budget:500 };
+  var currentStep = 1;
+  var MAX_PRIORITIES = 2;
+
+  var wizardView = document.getElementById('wizard-view');
+  var resultsView = document.getElementById('results-view');
+
+  /* ---- Build step 1: rooms ---- */
+  var gridRoom = document.getElementById('grid-room');
+  PLANNER_ROOMS.forEach(function(r){
+    var el = document.createElement('div');
+    el.className = 'option-card';
+    el.dataset.value = r.key;
+    el.innerHTML = '<span class="opt-icon">'+r.icon+'</span>'+r.label;
+    el.addEventListener('click', function(){
+      Array.prototype.forEach.call(gridRoom.children, function(c){ c.classList.remove('selected'); });
+      el.classList.add('selected');
+      state.room = r.key;
+      document.getElementById('btn-next-1').disabled = false;
+    });
+    gridRoom.appendChild(el);
+  });
+
+  /* ---- Step 2: renter ---- */
+  var gridRenter = document.getElementById('grid-renter');
+  Array.prototype.forEach.call(gridRenter.children, function(el){
+    el.addEventListener('click', function(){
+      Array.prototype.forEach.call(gridRenter.children, function(c){ c.classList.remove('selected'); });
+      el.classList.add('selected');
+      state.renter = el.dataset.value === '1';
+      document.getElementById('btn-next-2').disabled = false;
+    });
+  });
+
+  /* ---- Step 3: priorities (multi, max 2) ---- */
+  var gridPriority = document.getElementById('grid-priority');
+  PLANNER_PRIORITIES.forEach(function(p){
+    var el = document.createElement('div');
+    el.className = 'option-card';
+    el.dataset.value = p.key;
+    el.innerHTML = '<span class="opt-icon">'+p.icon+'</span>'+p.label;
+    el.addEventListener('click', function(){
+      var idx = state.priorities.indexOf(p.key);
+      if (idx !== -1){
+        state.priorities.splice(idx,1);
+        el.classList.remove('selected');
+      } else {
+        if (state.priorities.length >= MAX_PRIORITIES){
+          var firstKey = state.priorities.shift();
+          var firstEl = gridPriority.querySelector('[data-value="'+firstKey+'"]');
+          if (firstEl) firstEl.classList.remove('selected');
+        }
+        state.priorities.push(p.key);
+        el.classList.add('selected');
+      }
+      document.getElementById('btn-next-3').disabled = state.priorities.length === 0;
+    });
+    gridPriority.appendChild(el);
+  });
+
+  /* ---- Step 4: budget ---- */
+  var slider = document.getElementById('budget-slider');
+  var budgetNum = document.getElementById('budget-num');
+  slider.addEventListener('input', function(){
+    state.budget = parseInt(slider.value,10);
+    budgetNum.textContent = state.budget;
+    if (resultsView.classList.contains('active')) renderResults();
+  });
+
+  /* ---- Navigation ---- */
+  function showStep(n){
+    currentStep = n;
+    document.querySelectorAll('.planner-step').forEach(function(s){
+      s.classList.toggle('active', parseInt(s.dataset.step,10) === n);
+    });
+    document.querySelectorAll('.planner-progress-step').forEach(function(s){
+      s.classList.toggle('done', parseInt(s.dataset.step,10) <= n);
+    });
+  }
+  document.getElementById('btn-next-1').addEventListener('click', function(){ showStep(2); });
+  document.getElementById('btn-next-2').addEventListener('click', function(){ showStep(3); });
+  document.getElementById('btn-next-3').addEventListener('click', function(){ showStep(4); });
+  document.querySelectorAll('[data-back]').forEach(function(b){
+    b.addEventListener('click', function(){ showStep(parseInt(b.dataset.back,10)); });
+  });
+  document.getElementById('btn-see-plan').addEventListener('click', function(){
+    wizardView.style.display = 'none';
+    resultsView.classList.add('active');
+    renderResults();
+    window.scrollTo({top:0, behavior:'smooth'});
+    updateUrl();
+  });
+  document.getElementById('btn-adjust').addEventListener('click', function(){
+    resultsView.classList.remove('active');
+    wizardView.style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* ---- Results rendering ---- */
+  function renderResults(){
+    var picks = plannerBuildPlan(state);
+
+    var chipsEl = document.getElementById('results-chips');
+    chipsEl.innerHTML =
+      '<span>' + (PLANNER_ROOM_LABEL[state.room] || 'Small space') + '</span>' +
+      '<span>' + (state.renter ? 'Renter-friendly only' : 'Any installation OK') + '</span>' +
+      '<span>$' + state.budget + ' budget</span>' +
+      (state.priorities.length ? state.priorities.map(function(p){ return '<span>'+PLANNER_PRIORITY_LABEL[p]+'</span>'; }).join('') : '');
+
+    var barsEl = document.getElementById('budget-bars');
+    barsEl.innerHTML = picks.map(function(x){
+      var pct = Math.max(6, Math.round((x.alloc / state.budget) * 100));
+      return '<div class="bd-row">' +
+        '<div class="bd-row-label"><span class="name">'+x.cat.title+'</span><span class="amount">~$'+x.alloc+'</span></div>' +
+        '<div class="bd-track"><div class="bd-fill" style="width:'+pct+'%"></div></div>' +
+      '</div>';
+    }).join('');
+
+    var gridEl = document.getElementById('plan-grid');
+    gridEl.innerHTML = picks.map(function(x){
+      var chips = plannerReasonChips(x, state);
+      return '<div class="plan-card">' +
+        '<img src="'+x.cat.img+'" alt="'+x.cat.title+'" loading="lazy">' +
+        '<div class="plan-card-body">' +
+          '<div class="plan-card-head"><h4>'+x.cat.title+'</h4><span class="plan-tag tag-'+x.cat.tag+'">'+x.cat.group+'</span></div>' +
+          '<div class="plan-chips">' + chips.map(function(c){ return '<span class="plan-chip">'+c+'</span>'; }).join('') + '</div>' +
+          '<p class="plan-price">Typical range: <strong>$'+x.cat.price[0]+'–$'+x.cat.price[1]+'</strong> · suggested ~$'+x.alloc+' from your budget</p>' +
+          '<a class="buy-btn" href="'+x.cat.slug+'.html">See picks →</a>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  /* ---- Save / share via URL ---- */
+  function updateUrl(){
+    var params = new URLSearchParams();
+    if (state.room) params.set('room', state.room);
+    params.set('renter', state.renter ? '1' : '0');
+    params.set('pri', state.priorities.join(','));
+    params.set('budget', state.budget);
+    var url = window.location.pathname + '?' + params.toString();
+    window.history.replaceState({}, '', url);
+    return window.location.origin + url;
+  }
+  document.getElementById('btn-save').addEventListener('click', function(){
+    var url = updateUrl();
+    var confirmEl = document.getElementById('save-confirm');
+    if (navigator.clipboard){
+      navigator.clipboard.writeText(url).then(function(){
+        confirmEl.textContent = 'Link copied — save it or send it to whoever you\'re moving in with.';
+      }).catch(function(){
+        confirmEl.textContent = 'Your plan link: ' + url;
+      });
+    } else {
+      confirmEl.textContent = 'Your plan link: ' + url;
+    }
+  });
+
+  /* ---- Restore from URL on load ---- */
+  (function restoreFromUrl(){
+    var params = new URLSearchParams(window.location.search);
+    if (!params.has('room')) return;
+    var room = params.get('room');
+    if (!PLANNER_ROOM_LABEL[room]) return;
+    state.room = room;
+    state.renter = params.get('renter') === '1';
+    state.priorities = (params.get('pri') || '').split(',').filter(function(p){ return PLANNER_PRIORITY_LABEL[p]; }).slice(0,MAX_PRIORITIES);
+    state.budget = parseInt(params.get('budget'),10) || 500;
+
+    var roomEl = gridRoom.querySelector('[data-value="'+room+'"]');
+    if (roomEl) roomEl.classList.add('selected');
+    var renterEl = gridRenter.querySelector('[data-value="'+(state.renter?'1':'0')+'"]');
+    if (renterEl) renterEl.classList.add('selected');
+    state.priorities.forEach(function(p){
+      var el = gridPriority.querySelector('[data-value="'+p+'"]');
+      if (el) el.classList.add('selected');
+    });
+    slider.value = state.budget;
+    budgetNum.textContent = state.budget;
+
+    wizardView.style.display = 'none';
+    resultsView.classList.add('active');
+    renderResults();
+  })();
+
+  showStep(1);
+})();
+</script>
+</body>
+</html>
