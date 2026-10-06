@@ -187,4 +187,34 @@
     <priority>0.8</priority>
   </url>
 
+
+  <url>
+    <loc>https://cozysmallspace.org/vertical-storage-small-space-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cozysmallspace.org/small-room-lighting-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cozysmallspace.org/renter-friendly-decorating-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cozysmallspace.org/multifunctional-furniture-buying-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cozysmallspace.org/faq.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
