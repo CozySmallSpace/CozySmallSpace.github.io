@@ -250,7 +250,9 @@ nav.main-nav a:hover{color:var(--accent);}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg, rgba(20,16,12,0.16) 0%, rgba(20,16,12,0.22) 45%, rgba(20,16,12,0.4) 100%);
+  background:
+    linear-gradient(180deg, rgba(20,16,12,0.16) 0%, rgba(20,16,12,0.22) 45%, rgba(20,16,12,0.4) 100%),
+    linear-gradient(135deg, rgba(201,111,74,0.16) 0%, rgba(80,48,28,0.08) 100%);
 }
 .hero-banner-inner{
   position:relative;
@@ -308,7 +310,11 @@ nav.main-nav a:hover{color:var(--accent);}
     gap:22px;
   }
   .guide-card{
-    padding:24px 20px;
+    padding:0 20px 24px;
+  }
+  .guide-thumb{
+    margin:0 -20px 16px;
+    height:132px;
   }
   .guide-card h3{
     font-size:16px;
@@ -325,17 +331,33 @@ nav.main-nav a:hover{color:var(--accent);}
   background:var(--card);
   border:1px solid var(--border);
   border-radius:14px;
-  padding:26px 24px;
+  padding:0 24px 26px;
   text-decoration:none;
   color:var(--ink);
   display:flex;
   flex-direction:column;
-  transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow:hidden;
+  box-shadow:0 1px 3px rgba(43,38,32,0.05);
+  transition:transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .guide-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 24px rgba(43,38,32,0.08);
+  transform:translateY(-4px);
+  box-shadow:0 16px 32px rgba(43,38,32,0.12);
   border-color:#e0d5c8;
+}
+.guide-thumb{
+  margin:0 -24px 18px;
+  height:148px;
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.1) contrast(1.05) brightness(1.01) sepia(0.05);
+  position:relative;
+}
+.guide-thumb::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(20,16,12,0) 60%, rgba(20,16,12,0.1) 100%);
 }
 .guide-card h3{
   margin:0 0 10px;
@@ -358,7 +380,7 @@ nav.main-nav a:hover{color:var(--accent);}
   letter-spacing:0.4px;
   padding:4px 11px;
   border-radius:20px;
-  margin-bottom:14px;
+  margin:16px 0 14px;
 }
 .tag-storage{background:#e8f0e8;color:#2f6039;}
 .tag-furniture{background:#eef4fb;color:#2f5f9e;}
@@ -473,6 +495,7 @@ h2.prod-title:first-of-type{border-top:none;padding-top:0;}
   border-radius:14px;
   margin:18px 0 8px;
   display:block;
+  filter:saturate(1.08) contrast(1.04) brightness(1.01) sepia(0.05);
 }
 
 /* Per-product photo */
@@ -484,6 +507,7 @@ h2.prod-title:first-of-type{border-top:none;padding-top:0;}
   margin:10px 0 6px;
   display:block;
   box-shadow:0 4px 14px rgba(43,38,32,0.14);
+  filter:saturate(1.08) contrast(1.04) brightness(1.01) sepia(0.05);
 }
 .prod-image-caption{
   font-size:12px;
