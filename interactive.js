@@ -315,12 +315,173 @@
     });
   }
 
+  function initHeroWaveSm(){
+    var canvases = document.querySelectorAll('.hero-wave-sm');
+    if(!canvases.length) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var colors = ['#fff3e0', '#ffe3c2', '#f8c299', '#e0a840', '#fff8ef'];
+    // Glow via pre-rendered sprites (drawImage) instead of ctx.shadowBlur per
+    // shape, which is expensive to recompute every particle every frame and
+    // causes stutter.
+    function hexToRgb(hex){
+      hex = hex.replace('#', '');
+      return parseInt(hex.substring(0,2),16) + ',' + parseInt(hex.substring(2,4),16) + ',' + parseInt(hex.substring(4,6),16);
+    }
+    function makeSprite(color){
+      var s = 64;
+      var c = document.createElement('canvas');
+      c.width = s; c.height = s;
+      var sctx = c.getContext('2d');
+      var rgb = hexToRgb(color);
+      var g = sctx.createRadialGradient(s/2, s/2, 0, s/2, s/2, s/2);
+      g.addColorStop(0, 'rgba(' + rgb + ',1)');
+      g.addColorStop(0.35, 'rgba(' + rgb + ',0.85)');
+      g.addColorStop(1, 'rgba(' + rgb + ',0)');
+      sctx.fillStyle = g;
+      sctx.beginPath();
+      sctx.arc(s/2, s/2, s/2, 0, Math.PI * 2);
+      sctx.fill();
+      return c;
+    }
+    var sprites = {};
+    colors.forEach(function(c){ sprites[c] = makeSprite(c); });
+
+    canvases.forEach(function(canvas){
+      if(!canvas.getContext) return;
+      var ctx = canvas.getContext('2d');
+      var w = 0, h = 0, dpr = 1, band, particles, orbs, bandHalfWidth;
+      function rand(min, max){ return min + Math.random() * (max - min); }
+      function randG(){ return (Math.random() + Math.random() + Math.random() - 1.5) / 1.5; }
+      function resize(){
+        dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        var rect = canvas.getBoundingClientRect();
+        w = rect.width; h = rect.height;
+        canvas.width = Math.max(1, Math.round(w * dpr));
+        canvas.height = Math.max(1, Math.round(h * dpr));
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      function buildBand(){
+        band = {
+          amp: h * 0.16,
+          cycles: rand(0.9, 1.3),
+          phase: rand(0, Math.PI * 2),
+          speed: 0.32,
+          baseY: h * 0.52,
+          driftAmp: h * 0.1,
+          driftSpeed: rand(0.11, 0.17),
+          driftPhase: rand(0, Math.PI * 2),
+          k2: rand(0.7, 1.6),
+          k2phase: rand(0, Math.PI * 2)
+        };
+      }
+      function centerY(x, t){
+        var k = band.cycles * Math.PI * 2 / w;
+        return band.baseY
+          + Math.sin(x * k + band.phase + t * band.speed) * band.amp
+          + Math.sin(t * band.driftSpeed + band.driftPhase) * band.driftAmp;
+      }
+      function thickness(x, t){
+        var k2 = band.k2 * Math.PI * 2 / w;
+        return 0.55 + 0.45 * Math.sin(x * k2 + band.k2phase + t * 0.2);
+      }
+      function buildParticles(){
+        bandHalfWidth = h * 0.27;
+        particles = [];
+        var count = Math.max(100, Math.round((w * h) / 2500));
+        for (var i = 0; i < count; i++) {
+          particles.push({
+            u: Math.random(),
+            speed: rand(22, 70),
+            offset: randG() * bandHalfWidth,
+            wobbleAmp: rand(2, 7),
+            wobbleSpeed: rand(0.4, 1.1),
+            wobblePhase: rand(0, Math.PI * 2),
+            size: rand(0.7, 1.9),
+            color: colors[Math.floor(Math.random() * colors.length)],
+            alphaMax: rand(0.5, 0.95)
+          });
+        }
+        orbs = [];
+        var ocount = Math.max(4, Math.round(w / 220));
+        for (var j = 0; j < ocount; j++) {
+          orbs.push({
+            u: Math.random(),
+            speed: rand(10, 22),
+            offset: randG() * bandHalfWidth * 0.7,
+            size: rand(4, 7.5),
+            color: colors[Math.floor(Math.random() * colors.length)],
+            alphaMax: rand(0.3, 0.55),
+            wobbleAmp: rand(3, 7),
+            wobbleSpeed: rand(0.2, 0.5),
+            wobblePhase: rand(0, Math.PI * 2)
+          });
+        }
+      }
+      resize();
+      buildBand();
+      buildParticles();
+      window.addEventListener('resize', function(){ resize(); buildBand(); buildParticles(); });
+
+      function edgeFade(u){
+        var e = 0.06;
+        if (u < e) return u / e;
+        if (u > 1 - e) return (1 - u) / e;
+        return 1;
+      }
+
+      var time = 0, lastT = null;
+      function frame(ts){
+        if (w === 0 || h === 0) { if (!reduceMotion) requestAnimationFrame(frame); return; }
+        if (lastT === null) lastT = ts;
+        var dt = Math.min((ts - lastT) / 1000, 0.05);
+        lastT = ts;
+        ctx.clearRect(0, 0, w, h);
+
+        // No dark backdrop drawn here — the photo stays at its original color.
+        ctx.globalCompositeOperation = 'lighter';
+
+        for (var oi = 0; oi < orbs.length; oi++) {
+          var o = orbs[oi];
+          if (!reduceMotion) { o.u += o.speed * dt / w; if (o.u > 1) o.u -= 1; }
+          var ox = o.u * w;
+          var oy = centerY(ox, time) + o.offset + (reduceMotion ? 0 : Math.sin(time * o.wobbleSpeed + o.wobblePhase) * o.wobbleAmp);
+          var oAlpha = o.alphaMax * edgeFade(o.u);
+          if (oAlpha <= 0.02) continue;
+          var or = o.size * 2.4;
+          ctx.globalAlpha = oAlpha;
+          ctx.drawImage(sprites[o.color], ox - or, oy - or, or * 2, or * 2);
+        }
+
+        for (var i = 0; i < particles.length; i++) {
+          var pt = particles[i];
+          if (!reduceMotion) { pt.u += pt.speed * dt / w; if (pt.u > 1) pt.u -= 1; }
+          var x = pt.u * w;
+          var th = thickness(x, time);
+          var y = centerY(x, time) + pt.offset * th + (reduceMotion ? 0 : Math.sin(time * pt.wobbleSpeed + pt.wobblePhase) * pt.wobbleAmp);
+          var twinkle = reduceMotion ? 1 : (0.7 + 0.3 * Math.sin(time * 2.4 + pt.wobblePhase * 3));
+          var alpha = pt.alphaMax * edgeFade(pt.u) * twinkle;
+          if (alpha <= 0.03) continue;
+          var pr = pt.size * 2.8;
+          ctx.globalAlpha = alpha;
+          ctx.drawImage(sprites[pt.color], x - pr, y - pr, pr * 2, pr * 2);
+        }
+
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.globalAlpha = 1;
+        if (!reduceMotion) time += dt;
+        if (!reduceMotion) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function(){
     initFavoriteButtons();
     initComparator();
     renderFavoritesPage();
     initNewsletterForms();
     initContactForms();
+    initHeroWaveSm();
   });
 
   window.CozyTools = {
