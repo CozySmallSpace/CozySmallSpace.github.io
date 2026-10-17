@@ -153,6 +153,7 @@ nav.main-nav a:hover{color:var(--accent);}
 .nav-dropdown-menu a:hover{background:var(--bg);color:var(--accent-dark);}
 
 @media (max-width:640px){
+  .container{padding:0 18px;}
   .header-inner{
     flex-direction:row;
     align-items:center;
