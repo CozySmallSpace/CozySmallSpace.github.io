@@ -73,7 +73,25 @@ var PLANNER_CATEGORIES = [
     img:"tv-stands-media-consoles.jpg" },
   { slug:"electric-fireplace-tv-stands", title:"Electric Fireplace TV Stands", group:"Multi-functional Furniture", tag:"furniture",
     renter:true, rooms:["living","studio"], priority:["storage","decor","lighting"], price:[150,400],
-    img:"electric-fireplace-tv-stands.jpg" }
+    img:"electric-fireplace-tv-stands.jpg" },
+  { slug:"pantry-food-storage-small-apartments", title:"Pantry & Food Storage Organizers", group:"Pantry & Food Storage", tag:"pantry",
+    renter:true, rooms:["kitchen"], priority:["storage"], price:[20,50],
+    img:"pantry-food-storage-small-apartments.jpg" },
+  { slug:"laundry-solutions-small-apartments", title:"Laundry Solutions", group:"Laundry Solutions", tag:"laundry",
+    renter:true, rooms:["bedroom","bathroom","studio"], priority:["storage"], price:[15,40],
+    img:"laundry-solutions-small-apartments.jpg" },
+  { slug:"indoor-plants-planters-small-apartments", title:"Indoor Plants & Planters", group:"Indoor Plants & Planters", tag:"plants",
+    renter:true, rooms:["any"], priority:["decor"], price:[10,35],
+    img:"indoor-plants-planters-small-apartments.jpg" },
+  { slug:"wall-decor-removable-art-renters", title:"Wall Decor & Removable Art", group:"Wall Decor & Removable Art", tag:"walldecor",
+    renter:true, rooms:["any"], priority:["decor"], price:[10,70],
+    img:"wall-decor-removable-art-renters.jpg" },
+  { slug:"cleaning-tidying-small-apartments", title:"Cleaning & Tidying Essentials", group:"Cleaning & Tidying", tag:"cleaning",
+    renter:true, rooms:["any"], priority:["storage"], price:[15,80],
+    img:"cleaning-tidying-small-apartments.jpg" },
+  { slug:"smart-home-compact-tech-apartments", title:"Smart Home & Compact Tech", group:"Smart Home & Compact Tech", tag:"smarthome",
+    renter:true, rooms:["any"], priority:["lighting","decor"], price:[10,30],
+    img:"smart-home-compact-tech-apartments.jpg" }
 ];
 
 var PLANNER_ROOMS = [

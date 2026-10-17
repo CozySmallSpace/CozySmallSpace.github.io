@@ -445,6 +445,12 @@ nav.main-nav a:hover{color:var(--accent);}
 .tag-furniture{background:#eef4fb;color:#2f5f9e;}
 .tag-lighting{background:#fff6ea;color:#8a5c0c;}
 .tag-renter{background:#f7e9e3;color:#8a4526;}
+.tag-pantry{background:#fbeee0;color:#9a5a1f;}
+.tag-laundry{background:#e3eef8;color:#2b6a95;}
+.tag-plants{background:#e8f3e0;color:#4a7c3f;}
+.tag-walldecor{background:#f3e8f5;color:#7a3f8a;}
+.tag-cleaning{background:#e0f3f0;color:#1f7d72;}
+.tag-smarthome{background:#eae6f7;color:#5b4a9e;}
 .guide-link{
   margin-top:18px;
   font-size:13.5px;
