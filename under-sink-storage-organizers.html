@@ -10,6 +10,32 @@
 
   gtag("config", "G-3JDT662GT5");
 </script>
+<!-- Affiliate link click tracking -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a.buy-btn');
+    if (!link) return;
+    var node = link.closest('.buy-row');
+    node = node ? node.previousElementSibling : link.previousElementSibling;
+    var prodTitle = '';
+    while (node) {
+      if (node.classList && node.classList.contains('prod-title')) {
+        prodTitle = node.textContent.replace(/\s+/g, ' ').trim();
+        break;
+      }
+      node = node.previousElementSibling;
+    }
+    if (typeof gtag === 'function') {
+      gtag('event', 'affiliate_click', {
+        item_name: prodTitle || document.title,
+        link_url: link.href,
+        page_path: location.pathname
+      });
+    }
+  }, true);
+})();
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
